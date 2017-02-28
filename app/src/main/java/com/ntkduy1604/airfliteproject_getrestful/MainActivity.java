@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 String message = "Open the list of " + getString(R.string.category_device_list);
                 Toast.makeText(view.getContext(),message, Toast.LENGTH_SHORT).show();
-                Intent numbersIntent = new Intent(MainActivity.this, GetRest.class);
+                Intent numbersIntent = new Intent(MainActivity.this, JsonGet.class);
                 startActivity(numbersIntent);
             }
         });

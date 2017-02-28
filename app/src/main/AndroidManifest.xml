@@ -21,7 +21,7 @@
         </activity>
 
         <activity
-            android:name="com.ntkduy1604.airfliteproject_getrestful.GetRest"
+            android:name="com.ntkduy1604.airfliteproject_getrestful.JsonGet"
             android:label="@string/category_device_list">
 
         </activity>

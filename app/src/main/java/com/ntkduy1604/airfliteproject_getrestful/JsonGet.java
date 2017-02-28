@@ -5,16 +5,21 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.ListView;
+
+import junit.framework.Test;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-public class GetRest extends AppCompatActivity {
+import static android.icu.lang.UCharacter.GraphemeClusterBreak.T;
+
+public class JsonGet extends AppCompatActivity {
 //    private String TAG = MainActivity.class.getSimpleName(); //For debugging purpose
     private ListView listView;              // Create a ListView variable
-    private ArrayList<Word> words;          // Add array of Words To GetRest
+    private ArrayList<Word> words;          // Add array of Words To JsonGet
     private WordAdapter itemsAdapter;       // Create a WordAdapter item
 
     @Override
@@ -24,7 +29,7 @@ public class GetRest extends AppCompatActivity {
 
         words = new ArrayList<Word>();
         listView = (ListView) findViewById(R.id.word_list);
-        itemsAdapter = new WordAdapter(GetRest.this, words, R.color.category_device_list);
+        itemsAdapter = new WordAdapter(JsonGet.this, words, R.color.category_device_list);
 
         new GetContacts().execute();
     }
@@ -72,7 +77,7 @@ public class GetRest extends AppCompatActivity {
                         words.add(new Word(mId, mName, mSerialno, mActivedate,
 //                                mUserid, mComid,  mModel, mTagid,
                                 R.mipmap.ic_launcher));
-                        itemsAdapter = new WordAdapter(GetRest.this, words, R.color.category_device_list);
+                        itemsAdapter = new WordAdapter(JsonGet.this, words, R.color.category_device_list);
                     }
                 } catch (final JSONException jsonException) {
                 }
